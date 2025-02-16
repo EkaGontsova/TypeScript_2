@@ -1,0 +1,15 @@
+image: Ubuntu1804
+stack: node 16
+branches:
+  only:
+    - master
+    - main
+install:
+  - npm install
+  - chmod +x ./node_modules/.bin/jest  
+  - chmod +x ./node_modules/.bin/eslint 
+
+build: off
+
+test_script:
+  - npm run lint && npm test
